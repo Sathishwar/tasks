@@ -8,7 +8,7 @@
 ```bash
 $ helm install --name redis redis-ha -f redis-ha/values.yaml
 ```
-For More info - [click here](https://github.com/Sathishwar/tasks/redis-ha/README.MD)
+For More info - [click here](https://github.com/Sathishwar/tasks/blob/master/redis-ha/README.md)
 
 # Application Deployment
 
