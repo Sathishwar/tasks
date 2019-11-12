@@ -17,12 +17,20 @@ spec:
       containers:
       - name: counter-app
         image: tarunbhardwaj/flask-counter-app:latest
+        imagePullPolicy: Always
         resources:
           requests:
-            cpu: 100m
-            memory: 100Mi
+            cpu: 200m
+            memory: 500Mi
         env:
         - name: REDIS_URL
-          value: "redis://saarah-redis-ha:6379/0"
+          value: "redis://redis-ha-master-svc:6379/0"
         ports:
         - containerPort: 5000
+          protocol: TCP
+      nodeSelector:
+        stack: saarah
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30 
